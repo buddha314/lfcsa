@@ -1,8 +1,12 @@
 package com.renfieldlabs.lfcsa
 
-class Volunteer extends User {
-   static hasMany = [skill:Skill]
-    static constraints = {
+class Volunteer {
+   static belongsTo = [user:User]
+   static hasMany = [skills:Skill]
 
-    }
+   static constraints = {
+   }
+   String toString() {
+      user.toString()
+   }
 }

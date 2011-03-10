@@ -8,7 +8,11 @@ class User {
    String affiliation
 
    String toString() {
-      userid
+      lastName + ", " + firstName
+   }
+
+    static mapping = {
+      sort 'lastName':'ascending'
    }
 
    static constraints = {

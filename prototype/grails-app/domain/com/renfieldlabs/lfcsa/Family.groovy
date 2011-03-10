@@ -7,7 +7,7 @@ class Family {
    String primaryPhone
    String notes
 
-   static hasMany = [member:User]
+   static hasMany = [parents:User, children:Student]
 
    String toString() {
       familyName
