@@ -12,6 +12,10 @@ class BootStrap {
 
     def init = { servletContext ->
        if (!User.count()) {
+
+          User admin = new User(userid:"admin", password:"admin", firstName:"LFCSA"
+             , lastName:"Adminstrator", affiliation:"Administrator").save(failOnError:true)
+
           User bdolan = new User(userid:"bdolan", password:"brian", firstName:"Brian"
              , lastName:"Dolan", affiliation:"Administrator").save(failOnError:true)
 
@@ -34,6 +38,7 @@ class BootStrap {
 
           Volunteer v1 = new Volunteer(user:bdolan, skills:[carpenter, dev]).save(failOnError:true)
           Volunteer v2 = new Volunteer(user:jdolan, skills:[writer, dev]).save(failOnError:true)
+          Volunteer v3 = new Volunteer(user:admin, skills:[organizer]).save(failOnError:true)
 
           Entry e1 = new Entry(user:bdolan, title:"Need Student Database", summary:"Wish we had one").save(failOnError:true)
           Entry e2 = new Entry(user:jdolan, title:"Sushi?", summary:"Life is better with it").save(failOnError:true)
