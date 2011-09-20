@@ -25,11 +25,11 @@
                         
                             <g:sortableColumn property="id" title="${message(code: 'classroom.id.label', default: 'Id')}" />
                         
-                            <g:sortableColumn property="grade" title="${message(code: 'classroom.grade.label', default: 'Grade')}" />
-                        
                             <g:sortableColumn property="name" title="${message(code: 'classroom.name.label', default: 'Name')}" />
                         
                             <g:sortableColumn property="room_number" title="${message(code: 'classroom.room_number.label', default: 'Roomnumber')}" />
+                        
+                            <th><g:message code="classroom.semester.label" default="Semester" /></th>
                         
                             <th><g:message code="classroom.teacher.label" default="Teacher" /></th>
                         
@@ -41,11 +41,11 @@
                         
                             <td><g:link action="show" id="${classroomInstance.id}">${fieldValue(bean: classroomInstance, field: "id")}</g:link></td>
                         
-                            <td>${fieldValue(bean: classroomInstance, field: "grade")}</td>
-                        
                             <td>${fieldValue(bean: classroomInstance, field: "name")}</td>
                         
                             <td>${fieldValue(bean: classroomInstance, field: "room_number")}</td>
+                        
+                            <td>${fieldValue(bean: classroomInstance, field: "semester")}</td>
                         
                             <td>${fieldValue(bean: classroomInstance, field: "teacher")}</td>
                         

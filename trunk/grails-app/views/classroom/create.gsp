@@ -31,15 +31,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="grade"><g:message code="classroom.grade.label" default="Grade" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'grade', 'errors')}">
-                                    <g:textField name="grade" value="${classroomInstance?.grade}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                     <label for="name"><g:message code="classroom.name.label" default="Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'name', 'errors')}">
@@ -53,6 +44,15 @@
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'room_number', 'errors')}">
                                     <g:textField name="room_number" value="${classroomInstance?.room_number}" />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="semester"><g:message code="classroom.semester.label" default="Semester" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'semester', 'errors')}">
+                                    <g:select name="semester.id" from="${org.lfcsa.calpads.Semester.list()}" optionKey="id" value="${classroomInstance?.semester?.id}"  />
                                 </td>
                             </tr>
                         

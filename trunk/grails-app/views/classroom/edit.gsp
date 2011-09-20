@@ -34,15 +34,6 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="grade"><g:message code="classroom.grade.label" default="Grade" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'grade', 'errors')}">
-                                    <g:textField name="grade" value="${classroomInstance?.grade}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
                                   <label for="name"><g:message code="classroom.name.label" default="Name" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'name', 'errors')}">
@@ -61,10 +52,10 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="students"><g:message code="classroom.students.label" default="Students" /></label>
+                                  <label for="semester"><g:message code="classroom.semester.label" default="Semester" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'students', 'errors')}">
-                                    <g:select name="students" from="${org.lfcsa.calpads.Student.list()}" multiple="yes" optionKey="id" size="5" value="${classroomInstance?.students*.id}" />
+                                <td valign="top" class="value ${hasErrors(bean: classroomInstance, field: 'semester', 'errors')}">
+                                    <g:select name="semester.id" from="${org.lfcsa.calpads.Semester.list()}" optionKey="id" value="${classroomInstance?.semester?.id}"  />
                                 </td>
                             </tr>
                         

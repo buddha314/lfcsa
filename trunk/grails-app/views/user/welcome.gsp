@@ -116,6 +116,7 @@
                    <li><h3>For Teachers</h3></li>
                      <ul>
                          <li class="controller"><g:link controller="classroom" action="list">Classroom</g:link></li>
+                         <li class="controller"><g:link controller="classroomAssignment" action="list">Classroom Assignments</g:link></li>
                          <li class="controller"><g:link controller="attendanceSheet" action="list">Attendance Sheets</g:link></li>
                      </ul>
                    <li><h3>Staff Information</h3></li>

@@ -31,13 +31,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="classroom.grade.label" default="Grade" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: classroomInstance, field: "grade")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="classroom.name.label" default="Name" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: classroomInstance, field: "name")}</td>
@@ -52,15 +45,9 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="classroom.students.label" default="Students" /></td>
+                            <td valign="top" class="name"><g:message code="classroom.semester.label" default="Semester" /></td>
                             
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${classroomInstance.students}" var="s">
-                                    <li><g:link controller="student" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
+                            <td valign="top" class="value"><g:link controller="semester" action="show" id="${classroomInstance?.semester?.id}">${classroomInstance?.semester?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

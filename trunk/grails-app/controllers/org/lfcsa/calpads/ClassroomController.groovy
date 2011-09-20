@@ -5,16 +5,24 @@ class ClassroomController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
     def beforeInterceptor = [action:this.&auth, 
-      except:["login", "authenticate", "logout", "show_directory"]] 
+      except:["login", "authenticate", "logout", "welcome"]] 
    
     def auth() {
-      if( !(("staff" in session?.userRoles) || ("administrator" in session?.userRoles))) {
-         flash.message = "You must be an administrator to perform that task."
+      //if( !(("staff" in session?.userRoles) || ("administrator" in session?.userRoles))) {
+      if( !("administrator" in session?.userRoles)) {
+         def msg = "Current Roles: "
+         session.userRoles.each {
+            msg << "${it} "
+         }
+         //flash.message = "You must be an administrator to perform that task."
+         flash.message = msg 
          redirect(controller:"user", action:"login")
          return false
+      } else {
+         return true
       }
     }
- 
+
     def index = {
         redirect(action: "list", params: params)
     }

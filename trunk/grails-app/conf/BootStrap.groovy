@@ -1,6 +1,8 @@
 import grails.util.GrailsUtil
+import org.lfcsa.calpads.AcademicYear
 import org.lfcsa.calpads.Person
 import org.lfcsa.calpads.Role
+import org.lfcsa.calpads.Semester
 import org.lfcsa.calpads.User
 
 class BootStrap {
@@ -45,7 +47,6 @@ class BootStrap {
              , legal_name_middle:"User", user:jdoe )
           pjdoe.save()
 
-        
                
       break
 
